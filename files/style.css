@@ -1,0 +1,73 @@
+#root {
+    background-color: black;
+    text-align: center;
+    min-height: 100%;
+    min-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+#nav {
+    position: sticky; /* Make it stick/fixed */
+    top: 0; /* Stay on top */
+    width: 100%; /* Full width */
+    transition: top 0.5s; /* Transition effect when sliding down (and up) */
+    text-align: center;
+    cursor: default;
+    background-color: transparent;
+}
+
+#nav a {
+    display: inline-flex;
+    color: #ffffff;
+    width: 1em;
+    font-size: 2.5em;
+    margin: 1em 1em 1em 1em;
+    opacity: 0.35;
+    outline: 0;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+    transition: opacity .25s ease-in-out;
+}
+
+#nav a:hover {
+    opacity: 1.0;
+}
+
+#introduction {
+    margin-top: 10%;
+    color: white;
+    height: 600px;
+    width: 100vw;
+
+}
+
+#introduction::before {
+    display: block;
+    margin-top: -285px;
+    height: 285px;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#work {
+    margin-top: 100%;
+    color: white;
+    height: 600px;
+}
+
+#work::before {
+    display: block;
+    margin-top: -40px;
+    height: 40px;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.anchor {
+    padding-top: 90px;
+}
