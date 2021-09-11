@@ -29,7 +29,8 @@ h2 {
 }
 
 h2 span {
-    position:absolute; top:-5em;
+    position:absolute;
+    top: -3.5em;
 }
 
 .form {
@@ -183,4 +184,27 @@ button {
 .card a {
     color: inherit;
     text-decoration: none;
+}
+
+.checked {
+    color: darkgoldenrod;
+}
+
+.fa-star {
+    font-size: 2em;
+}
+
+.fa-star-half-alt {
+    font-size: 2em;
+    color: darkgoldenrod;
+}
+
+.list-group-item.list-group-item-action {
+    background-color: black;
+    color: #A4A4A4;
+    border-radius: 5px;
+}
+
+.list-group-item.list-group-item-action.active {
+    background-color: #292929;
 }
