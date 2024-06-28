@@ -1,7 +1,7 @@
 import React from 'react';
-import SectionHeading from '@/app/components/section-heading';
+import SectionHeading from '@/app/components/SectionHeading';
 import { projectsData } from '@/app/lib/data';
-import Project from '@/app/components/project';
+import Project from '@/app/components/Project';
 import { useSectionInView } from '@/app/lib/hooks';
 
 export default function Projects() {

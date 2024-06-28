@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { links } from '@/app/lib/data';
-import { useActiveSectionContext } from '@/app/context/active-section-context';
+import { useActiveSectionContext } from '@/app/context/ActiveSectionContext';
 import Link from 'next/link';
 import clsx from 'clsx';
 
