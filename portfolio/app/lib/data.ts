@@ -35,51 +35,51 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Software Engineer Intern - Dolby Laboratories",
+    location: "Sunnyvale, CA",
     description:
       "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2019",
-  },
-  {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
-    description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
     icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+    date: "2019 - present",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
+    title: "Software Engineer Intern - Tesla",
+    location: "Palo Alto, CA",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: "2021 - present",
+      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+    icon: React.createElement(CgWorkAlt),
+    date: "2019 - present",
+  },
+  {
+    title: "Software Engineer - Tesla",
+    location: "Palo Alto, CA",
+    description:
+      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+    icon: React.createElement(CgWorkAlt),
+    date: "2019 - present",
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "Cat Food Tracker",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+      "I worked as a full-stack developer on Cat-Food-Logger, a user-friendly app enabling cat owners to track their cats' food preferences, logging food trials and providing analytics.",
+    tags: ["Java", "Flutter", "MongoDB", "Bloc", "gRPC", "Springboot"],
     imageUrl: corpcommentImg,
   },
   {
-    title: "rmtDev",
+    title: "Duplicate Finder",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+      "A recursive file duplicate finder for efficient management and analysis of duplicate files within specified or current directories.",
+    tags: ["Python", "OOP"],
     imageUrl: rmtdevImg,
   },
   {
-    title: "Word Analytics",
+    title: "Car Simulator",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+      "An immersive car simulator leveraging Three.js, offering realistic 3D rendering and interactive controls in browser.",
+    tags: ["Javascript", "Three.js"],
     imageUrl: wordanalyticsImg,
   },
 ] as const;
