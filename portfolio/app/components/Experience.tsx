@@ -2,18 +2,38 @@
 
 import React from 'react';
 import SectionHeading from '@/app/components/SectionHeading';
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
 import { experiencesData } from '@/app/lib/data';
 import { useSectionInView } from '@/app/lib/hooks';
 import { useTheme } from '@/app/context/ThemeContext';
+import dynamic from 'next/dynamic';
+import { CgWorkAlt } from 'react-icons/cg';
+
+const Chrono = dynamic(() => import('react-chrono').then((mod) => mod.Chrono), {
+  ssr: false,
+});
 
 export default function Experience() {
   const { ref } = useSectionInView('Experience');
-  const { theme } = useTheme();
+  const { isDarkMode } = useTheme();
+
+  const chronoTheme = {
+    primary: isDarkMode ? 'rgba(255, 255, 255, 0.2)' : '#e5e7eb',
+    secondary: 'transparent',
+    cardBgColor: isDarkMode ? 'rgba(255, 255, 255, 0.05)' : '#f3f4f6',
+    cardDetailsBackGround: isDarkMode ? 'rgba(255, 255, 255, 0.05)' : '#f3f4f6',
+    cardForeColor: isDarkMode ? 'rgba(255, 255, 255, 0.05)' : '#f3f4f6',
+    titleColor: isDarkMode ? 'rgba(255, 255, 255, 0.75)' : 'rgb(107 114 128)',
+    titleColorActive: isDarkMode
+      ? 'rgba(255, 255, 255, 0.75)'
+      : 'rgb(107 114 128)',
+    iconBackgroundColor: isDarkMode ? 'rgba(255, 255, 255, 0.15)' : 'white',
+    cardTitleColor: isDarkMode ? 'white' : 'black',
+    cardSubtitleColor: isDarkMode ? 'white' : 'black',
+    cardDetailsColor: isDarkMode
+      ? 'rgba(255, 255, 255, 0.75)'
+      : 'rgb(55 65 81)',
+    detailsColor: isDarkMode ? 'rgba(255, 255, 255, 0.75)' : 'rgb(55 65 81)',
+  };
 
   return (
     <section
@@ -22,43 +42,29 @@ export default function Experience() {
       className='scroll-mt-28 mb-28 sm:mb-0'
     >
       <SectionHeading>My experience</SectionHeading>
-      <VerticalTimeline lineColor='#E5E7EB'>
-        {experiencesData.map((item, index) => (
-          <React.Fragment key={index}>
-            <VerticalTimelineElement
-              visible={true}
-              contentStyle={{
-                background:
-                  theme === 'light' ? '#f3f4f6' : 'rgba(255, 255, 255, 0.05)',
-                boxShadow: 'none',
-                border: '1px solid rgba(0, 0, 0, 0.05)',
-                textAlign: 'left',
-                padding: '1.3rem 2rem',
-              }}
-              iconClassName='vertical-timeline-element-icon shadow-size-small'
-              contentArrowStyle={{
-                borderRight:
-                  theme === 'light'
-                    ? '0.4rem solid #9ca3af'
-                    : '0.4rem solid rgba(255, 255, 255, 0.5)',
-              }}
-              date={item.date}
-              icon={item.icon}
-              iconStyle={{
-                background:
-                  theme === 'light' ? 'white' : 'rgba(255, 255, 255, 0.15)',
-                fontSize: '1.5rem',
-              }}
-            >
-              <h3 className='font-semibold capitalize'>{item.title}</h3>
-              <p className='font-normal !mt-0'>{item.location}</p>
-              <p className='!mt-1 !font-normal text-gray-700 dark:text-white/75'>
-                {item.description}
-              </p>
-            </VerticalTimelineElement>
-          </React.Fragment>
-        ))}
-      </VerticalTimeline>
+      <div style={{ width: '100%', height: '100%' }}>
+        <Chrono
+          key={isDarkMode ? 'dark' : 'light'}
+          items={experiencesData}
+          mode='VERTICAL_ALTERNATING'
+          disableToolbar
+          timelinePointDimension={50}
+          theme={chronoTheme}
+          fontSizes={{
+            cardSubtitle: '0.9rem',
+            cardText: '0.8rem',
+            cardTitle: '1rem',
+            title: '1rem',
+          }}
+        >
+          <div className='chrono-icons'>
+            <CgWorkAlt className='text-3xl' />
+            <CgWorkAlt className='text-3xl' />
+            <CgWorkAlt className='text-3xl' />
+            <CgWorkAlt className='text-3xl' />
+          </div>
+        </Chrono>
+      </div>
     </section>
   );
 }

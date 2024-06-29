@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import ActiveSectionContextProvider from '@/app/context/ActiveSectionContext';
 import Header from '@/app/components/Header';
-import ThemeContextProvider from '@/app/context/ThemeContext';
+import { ThemeContextProvider } from '@/app/context/ThemeContext';
 import { Toaster } from 'react-hot-toast';
 import Footer from '@/app/components/Footer';
 
