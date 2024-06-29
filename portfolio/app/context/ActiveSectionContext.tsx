@@ -1,7 +1,7 @@
 'use client';
 
-import React, { createContext, useContext, useState } from 'react';
 import type { SectionName } from '@/app/lib/types';
+import React, { useState, createContext, useContext } from 'react';
 
 type ActiveSectionContextProviderProps = {
   children: React.ReactNode;
@@ -21,7 +21,7 @@ export default function ActiveSectionContextProvider({
   children,
 }: ActiveSectionContextProviderProps) {
   const [activeSection, setActiveSection] = useState<SectionName>('Home');
-  const [timeOfLastClick, setTimeOfLastClick] = useState(0);
+  const [timeOfLastClick, setTimeOfLastClick] = useState(0); // we need to keep track of this to disable the observer temporarily when user clicks on a link
 
   return (
     <ActiveSectionContext.Provider
